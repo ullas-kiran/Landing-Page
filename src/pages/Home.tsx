@@ -1,7 +1,9 @@
 
 const Home:React.FunctionComponent = ():JSX.Element => {
   return (
-    <div>Home</div>
+    <div>
+      hi
+    </div>
   )
 }
 
