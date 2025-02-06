@@ -1,10 +1,11 @@
+import Header from "@/components/common/header/Header"
 import { Outlet } from "react-router-dom"
 
 
 const MainLayout:React.FunctionComponent = ():JSX.Element => {
   return (
     <div className="">
-        <header>outlet header</header>
+        <Header/>
         <main><Outlet/></main>
         <footer>outlet footer</footer>
     </div>

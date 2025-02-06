@@ -6,7 +6,7 @@ import MainLayout from "@/layout/MainLayout";
 import RouterError from "@/components/errorBoundary/RouterError";
 
 // pages
-const Home = lazy(() => import("@/pages/Home"));
+const Home = lazy(() => import("@/pages/home/Home"));
 
 const Router: React.FunctionComponent = (): JSX.Element => {
   const routes = [
