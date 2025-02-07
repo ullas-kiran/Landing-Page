@@ -1,13 +1,19 @@
-import slider1 from "@/assets/images/slider1.webp"
-import slider2 from "@/assets/images/slider2.webp"
-import slider3 from "@/assets/images/slider3.webp"
-import slider4 from "@/assets/images/slider4.webp"
-import slider5 from "@/assets/images/slider5.webp"
+import slider1 from "@/assets/images/slider1.webp";
+import slider2 from "@/assets/images/slider2.webp";
+import slider3 from "@/assets/images/slider3.webp";
+import slider4 from "@/assets/images/slider4.webp";
+import slider5 from "@/assets/images/slider5.webp";
 import Tick from "@/assets/svg/Tick";
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react";
 
+interface Tab {
+  title: string;
+  image: string;
+  heading: string;
+  descriptions: string[];
+}
 
-const tabs = [
+const tabs: Tab[] = [
   {
     title: "Single App Kiosk",
     image: slider1,
@@ -65,12 +71,20 @@ const tabs = [
   }
 ];
 
-const KioskModes:React.FunctionComponent = ():JSX.Element => {
+const KioskModes: React.FC = (): JSX.Element => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const tabRefs = useRef<(HTMLLIElement | null)[]>([]);
+  const [indicatorStyle, setIndicatorStyle] = useState({ width: "0px", left: "0px" });
 
-    const [activeIndex, setActiveIndex] = useState(0);
+  useEffect(() => {
+    if (tabRefs.current[activeIndex]) {
+      const { offsetWidth, offsetLeft } = tabRefs.current[activeIndex] as HTMLLIElement;
+      setIndicatorStyle({ width: `${offsetWidth}px`, left: `${offsetLeft}px` });
+    }
+  }, [activeIndex]);
 
-return (
-<div className="py-[60px] flex justify-center items-center text-center flex-col lg:py-[120px]">
+  return (
+    <div className="py-[60px] flex justify-center items-center text-center flex-col lg:py-[120px]">
       <div className="mx-auto max-w-[1300px] w-[88%]">
         <h2 className="text-center mx-auto text-[#020a19] text-[28px] leading-[1.25] antialiased font-[700] sm:text-[36px] max-w-[900px]">
           Specific kiosk modes for unique use cases
@@ -81,21 +95,18 @@ return (
               <div className="w-full relative border border-solid border-[#f7f7f7] rounded-t-[4px] overflow-hidden overflow-x-auto scroll-smooth">
                 <div className="w-full scroll-smooth overflow-x-scroll relative inline-block no-scrollbar">
                   <div
-                    className="h-[80px] transition-all duration-[600ms] z-2 ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] bg-[#020a19] rounded-[4px]   absolute bottom-0"
-                    style={{ width: "260px", left: `${activeIndex * 260}px` }}
+                    className="h-[80px] transition-all duration-[600ms] z-2 ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] bg-[#020a19] rounded-[4px] absolute bottom-0"
+                    style={indicatorStyle}
                   ></div>
                   <ul className="flex duration-300 ease-in justify-between items-center scroll-smooth whitespace-nowrap cursor-pointer">
                     {tabs.map((tab, index) => (
                       <li
                         key={index}
-                        className={`flex-1 min-h-[80px] w-full px-[30px] relative text-center whitespace-normal transition-all duration-[400ms] ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] before:content-[''] before:absolute before:left-0 before:w-[2px] before:h-full before:z-1 before:bg-[#f7f7f7]`}
+                        ref={(el) => (tabRefs.current[index] = el)}
+                        className=" flex-1 min-h-[80px] w-full px-[30px] relative text-center whitespace-normal transition-all duration-[400ms] ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] before:content-[''] before:absolute before:left-0 before:w-[2px] before:h-full before:z-1 before:bg-[#f7f7f7]"
                         onClick={() => setActiveIndex(index)}
                       >
-                        <p
-                          className={`p-[26px_0] max-w-[240px] h-[80px] w-full flex justify-center items-center text-[22px] !whitespace-nowrap font-[600] leading-[24px] relative z-3 duration-[400ms] ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] ${
-                            index === activeIndex ? "text-[#fff]" : "text-[#020a19]/50"
-                          }`}
-                        >
+                        <p className={`p-[26px_0] max-w-[240px] h-[80px] w-full flex justify-center items-center !whitespace-nowrap text-[22px] font-[600] leading-[24px] relative z-3 duration-[400ms] ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] ${index === activeIndex ? "text-[#fff]" : "text-[#020a19]/50"}`}>
                           <span>{tab.title}</span>
                         </p>
                       </li>
@@ -136,8 +147,7 @@ return (
         </div>
       </div>
     </div>
+  );
+};
 
-  )
-}
-
-export default KioskModes
+export default KioskModes;
