@@ -3,6 +3,7 @@ import slider2 from "@/assets/images/slider2.webp";
 import slider3 from "@/assets/images/slider3.webp";
 import slider4 from "@/assets/images/slider4.webp";
 import slider5 from "@/assets/images/slider5.webp";
+import Arrow from "@/assets/svg/Arrow";
 import Tick from "@/assets/svg/Tick";
 import { useState, useRef, useEffect } from "react";
 
@@ -90,6 +91,23 @@ const KioskModes: React.FC = (): JSX.Element => {
           Specific kiosk modes for unique use cases
         </h2>
         <div className="pt-[40px] sm:pt-[60px]">
+
+    {/* mobile view */}
+          <div className="flex justify-between w-full border-b rounded-[4px] flex-col m-0 sm:hidden overflow-hidden ">
+             <div>
+              <div className="border-[1px] border-b-0 border-solid rounded-[4px] bg-white border-black/10">
+              <span className="w-full text-left text-[18px] sm:text-[20px] leading-[26px] font-bold  text-[#020a19]/50  cursor-pointer flex items-center justify-between p-[16px]">
+              <span>Single App Kiosk</span>
+              <span className="transform rotate-[-180deg] duration-300 h-[20px] origin-center">
+                <Arrow/>
+              </span>
+              </span>
+              </div>
+              <div className=" max-h-0 flex px-[15px] sm:p-0 justify-between bg-[#f7f7f7] flex-col-reverse w-full transition-all duration-500 ease-in-out overflow-y-hidden"></div>
+             </div>
+          </div>
+      {/* mobile view */}
+      {/* desktop */}
           <div className="relative hidden sm:block">
             <div className="flex bg-white justify-center relative">
               <div className="w-full relative border border-solid border-[#f7f7f7] rounded-t-[4px] overflow-hidden overflow-x-auto scroll-smooth">
@@ -144,6 +162,7 @@ const KioskModes: React.FC = (): JSX.Element => {
               </div>
             </div>
           </div>
+          {/* desktop */}
         </div>
       </div>
     </div>
