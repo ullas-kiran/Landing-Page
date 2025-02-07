@@ -81,18 +81,18 @@ return (
               <div className="w-full relative border border-solid border-[#f7f7f7] rounded-t-[4px] overflow-hidden overflow-x-auto scroll-smooth">
                 <div className="w-full scroll-smooth overflow-x-scroll relative inline-block no-scrollbar">
                   <div
-                    className="h-[80px] transition-all duration-[600ms] z-2 ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] bg-[#020a19] rounded-[4px] opacity-1 absolute bottom-0"
+                    className="h-[80px] transition-all duration-[600ms] z-2 ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] bg-[#020a19] rounded-[4px]   absolute bottom-0"
                     style={{ width: "260px", left: `${activeIndex * 260}px` }}
                   ></div>
                   <ul className="flex duration-300 ease-in justify-between items-center scroll-smooth whitespace-nowrap cursor-pointer">
                     {tabs.map((tab, index) => (
                       <li
                         key={index}
-                        className="flex-1 min-h-[80px] w-full px-[30px] relative text-center whitespace-normal transition-all duration-[400ms] ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] before:content-[''] before:absolute before:left-0 before:w-[2px] before:h-full before:z-1 before:bg-[#f7f7f7]"
+                        className={`flex-1 min-h-[80px] w-full px-[30px] relative text-center whitespace-normal transition-all duration-[400ms] ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] before:content-[''] before:absolute before:left-0 before:w-[2px] before:h-full before:z-1 before:bg-[#f7f7f7]`}
                         onClick={() => setActiveIndex(index)}
                       >
                         <p
-                          className={`p-[26px_0] max-w-[240px] h-[80px] w-full flex justify-center items-center text-[22px] whitespace-nowrap font-[600] leading-[24px] relative z-3 duration-[400ms] ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] ${
+                          className={`p-[26px_0] max-w-[240px] h-[80px] w-full flex justify-center items-center text-[22px] !whitespace-nowrap font-[600] leading-[24px] relative z-3 duration-[400ms] ease-[cubic-bezier(0.25, 0.1, 0.25, 1)] ${
                             index === activeIndex ? "text-[#fff]" : "text-[#020a19]/50"
                           }`}
                         >
