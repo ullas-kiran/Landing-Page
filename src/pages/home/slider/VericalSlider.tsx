@@ -92,69 +92,6 @@ const VerticalSlider = () => {
        </div>
     </div>
 </div>
-
-
-<div className="pb-16">
-      <div className="w-[88%] max-w-[1300px] mx-auto">
-        <h2 className="text-center text-2xl md:text-4xl font-bold text-[#020a19] pb-6">
-          What additional possibilities does the Kiosk mode offer?
-        </h2>
-        <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
-          {/* Image Section */}
-          <div className="md:w-1/2 max-w-[545px] relative transition-all duration-300 ease-out">
-            <div className="overflow-hidden rounded-lg">
-              <img
-                src={sliderData[activeIndex].image}
-                alt="Slider"
-                className="w-full h-auto object-cover transition-all duration-300"
-              />
-            </div>
-          </div>
-
-          {/* Accordion Section */}
-          <div className="md:w-1/2 max-w-[725px]">
-            {sliderData.map((item, index) => (
-              <div
-                key={index}
-                className={`border-b border-gray-200 py-4 transition-all duration-300 ${
-                  activeIndex === index ? "bg-gray-100" : ""
-                }`}
-              >
-                <h3
-                  className="text-lg md:text-xl font-bold text-[#050607] cursor-pointer flex justify-between items-center"
-                  onClick={() => setActiveIndex(index)}
-                >
-                  {item.title}
-                  <span
-                    className={`transform transition-transform ${
-                      activeIndex === index ? "rotate-90" : "rotate-0"
-                    }`}
-                  >
-                    <RightArrow />
-                  </span>
-                </h3>
-                <div
-                  className={`overflow-hidden transition-all duration-300 ${
-                    activeIndex === index ? "h-auto opacity-100 py-2" : "h-0 opacity-0"
-                  }`}
-                >
-                  <p className="text-gray-600 text-base">{item.description}</p>
-                  <a
-                    href="https://www.hexnode.com/mobile-device-management/cloud/signup/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center mt-2 text-red-600 font-semibold"
-                  >
-                    Try for free
-                    <RightArrow />
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
     </>
 );
 };

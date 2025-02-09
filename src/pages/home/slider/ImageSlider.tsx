@@ -9,21 +9,21 @@ import { useEffect, useState } from "react";
 const profileData = [
   {
     src: Profile1,
+    quote: "Hexnode is of great value. Works great with Android and iOS",
+    name: "Justin Modrak",
+    company: "Technology Coordinator \n East Troy Community School District",
+  },
+  {
+    src: Profile2,
     quote: "Most complete MDM solution I found, and I tested many of them, including major names",
     name: "Dalibor Kruljac",
     company: "KAMELEYA LTD",
   },
   {
-    src: Profile2,
-    quote: "An amazing product that truly simplifies device management for enterprises.",
-    name: "John Doe",
-    company: "TechCorp Inc.",
-  },
-  {
     src: Profile3,
-    quote: "An amazing product that truly simplifies device management for enterprises.",
-    name: "John Doe",
-    company: "TechCorp Inc.",
+    quote: "It seemed to be in-line with everything we were looking at.",
+    name: "Chris Robinson",
+    company: "Executive Account Manager, NCS",
   },
 ];
 
@@ -34,16 +34,20 @@ const ImageSlider = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % profileData.length);
-    }, 10000);
+    }, 9000);
     return () => clearInterval(interval);
   }, []);
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + profileData.length) % profileData.length);
+    if (currentIndex > 0) {
+      setCurrentIndex((prevIndex) => prevIndex - 1);
+    }
   };
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % profileData.length);
+    if (currentIndex < profileData.length - 1) {
+      setCurrentIndex((prevIndex) => prevIndex + 1);
+    }
   };
 
   return (
@@ -55,7 +59,7 @@ const ImageSlider = () => {
            <div className="max-w-[280px] sm:max-w-[400px] md:max-w-[960px] lg:max-w-[780px] xl:max-w-[960px] pt-[40px] pb-[80px] relative mx-auto lg:pb-0">
                <ul className="cusreviewslider_slider-wrapper__VBzwn">
                   <div className="slick-slider slick-initialized" dir="ltr">
-                       <button onClick={prevSlide} className=" flex items-center justify-center bottom-[-80px] absolute leading-[0px] left-[50%] w-[56px] h-[56px] rounded-[12px] bg-[#FFFFFF] lg:bottom-[50%] cursor-not-allowed group translate-x-[-62px] lg:translate-x-[-50%] lg:translate-y-[50%] lg:left-[-60px]">
+                       <button  disabled={currentIndex === 0}  onClick={prevSlide} className={` ${currentIndex === 0 ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'} flex items-center justify-center bottom-[-80px] absolute leading-[0px] left-[50%] w-[56px] h-[56px] rounded-[12px] bg-[#FFFFFF] lg:bottom-[50%] cursor-not-allowed group translate-x-[-62px] lg:translate-x-[-50%] lg:translate-y-[50%] lg:left-[-60px]`}>
                          <PrevArrow/>
                        </button>
                        <div className="slick-list" style={{height:"320px"}}>
@@ -73,8 +77,7 @@ const ImageSlider = () => {
                                 <div className="px-[20px] py-[20px] md:pl-[60px] md:pr-[55px] md:py-0 flex flex-col justify-center items-center md:min-h-[120px]">
                                   <span className="h-[2px] w-full bg-[#F7F7F7] relative top-[-20px] rounded-[5px]"></span>
                                   <p className="text-center md:text-left w-full mx-auto text-[14px] leading-[11px] sm:text-[20px] sm:leading-[33px] pb-[5px] sm:pb-0 text-[#020a19] font-bold ">{profileData[currentIndex].name}</p>
-                                  <small className="text-center md:text-left w-full mx-auto md:mr-auto md:ml-[unset] text-[12px] leading-[16px] sm:text-[14px] sm:leading-[18px] text-[#020a19] font-normal max-w-[294px] opacity-70 "></small>
-                                  <small className="text-center mx-auto md:mr-auto md:ml-[unset] text-[12px] leading-[16px] sm:text-[14px] sm:leading-[18px] text-[#020a19] font-normal max-w-[294px] opacity-70 ">  {profileData[currentIndex].company}</small>
+                                  <small className="mx-auto md:mr-auto md:ml-[unset] text-[12px] leading-[16px] sm:text-[14px] sm:leading-[18px] text-[#020a19] font-normal max-w-[294px] opacity-70 ">{profileData[currentIndex].company}</small>
                                   </div>
                                 </div> 
                               </div>
@@ -82,7 +85,7 @@ const ImageSlider = () => {
                            </div>
                         </div>
                        </div>
-                       <button onClick={nextSlide} className=" flex items-center justify-center cursor-pointer bottom-[-80px] absolute leading-[0px] left-[50%] w-[56px] h-[56px] rounded-[12px] bg-[#FFFFFF] lg:bottom-[50%] group translate-x-[8px] lg:translate-x-[50%] lg:translate-y-[50%] lg:left-[unset] lg:right-[-60px]">
+                       <button  disabled={currentIndex === profileData.length - 1}  onClick={nextSlide} className={`  ${currentIndex === profileData.length - 1 ? 'cursor-not-allowed opacity-50' : 'cursor-pointer'} flex items-center justify-center  bottom-[-80px] absolute leading-[0px] left-[50%] w-[56px] h-[56px] rounded-[12px] bg-[#FFFFFF] lg:bottom-[50%] group translate-x-[8px] lg:translate-x-[50%] lg:translate-y-[50%] lg:left-[unset] lg:right-[-60px] `}>
                         <NextArrow/>
                        </button>
                   </div>
