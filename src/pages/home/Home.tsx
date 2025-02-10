@@ -5,6 +5,7 @@ import VerticalSlider from "./slider/VericalSlider";
 import ImageSlider from "./slider/ImageSlider";
 import BrandSlider from "./slider/BrandSlider";
 import PlatformList from "./platform/PlatformList";
+import EmailSignup from "./signUp/EmailSignup";
 
 
 
@@ -18,6 +19,7 @@ const Home: React.FunctionComponent = (): JSX.Element => {
       <ImageSlider/>
       <BrandSlider/>
       <PlatformList/>
+      <EmailSignup/>
     </>
   );
 };
