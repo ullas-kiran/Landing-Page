@@ -1,6 +1,7 @@
 import idc from "@/assets/images/idc.png"
 import gartner from "@/assets/images/gartner.webp"
 import forrester from "@/assets/images/forrester.png"
+import React from "react"
 const Achievements:React.FunctionComponent = ():JSX.Element => {
 
     const achievementsList=[
@@ -28,7 +29,7 @@ const Achievements:React.FunctionComponent = ():JSX.Element => {
 
           {achievementsList.map((achievement) => {
             return (
-              <>
+              <React.Fragment key={achievement.id}>
                 <a
                   href="http://"
                   target="_blank"
@@ -51,7 +52,7 @@ const Achievements:React.FunctionComponent = ():JSX.Element => {
                   </div>
                 </a>
                 <div className="w-[107px] md:w-[1px] bg-[rgb(255,255,255,20%)] basis-[1px] last:hidden"></div>
-              </>
+              </React.Fragment>
             );
           })}
 
