@@ -1,5 +1,5 @@
 <svg id="windows" xmlns="http://www.w3.org/2000/svg" width="191" height="72" viewBox="0 0 191 72">
-  <g id="base" fill="#fff" stroke="#e5e5e5" stroke-width="0.5">
+  <g id="base" fill="#fff" stroke="#e5e5e5" strokeWidth="0.5">
     <rect width="191" height="72" rx="5" stroke="none"/>
     <rect x="0.25" y="0.25" width="190.5" height="71.5" rx="4.75" fill="none"/>
   </g>
