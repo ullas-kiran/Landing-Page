@@ -4,6 +4,7 @@ import KioskModes from "./tabs/KioskModes";
 import VerticalSlider from "./slider/VericalSlider";
 import ImageSlider from "./slider/ImageSlider";
 import BrandSlider from "./slider/BrandSlider";
+import PlatformList from "./platform/PlatformList";
 
 
 
@@ -16,6 +17,7 @@ const Home: React.FunctionComponent = (): JSX.Element => {
       <VerticalSlider/>
       <ImageSlider/>
       <BrandSlider/>
+      <PlatformList/>
     </>
   );
 };

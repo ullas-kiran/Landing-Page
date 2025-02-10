@@ -37,10 +37,10 @@ const BrandSlider: React.FC = () => {
 
   return (
     <div className="pb-[60px] pt-[10px] lg:pb-[120px] md:pt-[20px] bg-[#F7F7F7]">
-      <div className="w-[88%] mx-auto md:max-w-[1300px] relative overflow-hidden">
+      <div className="w-[88%] mx-auto md:max-w-[1300px] relative">
         {/* Gradient Fades */}
         <div className="w-[70px] sm:w-[100px] h-[40px] sm:h-[80px] absolute left-0 bg-gradient-to-r from-[#F7F7F7] via-[#F7F7F7] to-transparent z-[1]"></div>
-        <div className="w-[70px] sm:w-[100px] h-[40px] sm:h-[80px] absolute right-0 bg-gradient-to-l from-[#F7F7F7] via-[#F7F7F7] to-transparent z-[1]"></div>
+        <div className="w-[70px] sm:w-[100px] h-[40px] sm:h-[80px] absolute right-0 bg-gradient-to-l from-[#F7F7F7] via-[#F7F7F7] to-transparent z-[1]a"></div>
         
         <div ref={sliderRef} className="flex space-x-10 overflow-hidden whitespace-nowrap">
           {duplicatedBrands.map((brand, index) => (
