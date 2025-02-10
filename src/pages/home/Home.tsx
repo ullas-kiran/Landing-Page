@@ -3,6 +3,7 @@ import HeroSection from "@/pages/home/banner/HeroSection";
 import KioskModes from "./tabs/KioskModes";
 import VerticalSlider from "./slider/VericalSlider";
 import ImageSlider from "./slider/ImageSlider";
+import BrandSlider from "./slider/BrandSlider";
 
 
 
@@ -14,6 +15,7 @@ const Home: React.FunctionComponent = (): JSX.Element => {
       <KioskModes/> 
       <VerticalSlider/>
       <ImageSlider/>
+      <BrandSlider/>
     </>
   );
 };
