@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <header
-      className={`${isScrolled?"bg-[#fff] scrollbg border-b border-[#dbd9d2]":""} sticky top-0 w-full z-[102] left-[0px] nav-header before:content-['']] before:absolute before:bg-[#fff] before:left-[0px] before:top-[0px] before:w-full before:h-full before:opacity-0 before:z-[-3] xl:hover:before:opacity-100 header-wrap false xl:pt-[7px] xl:pb-[2px]`}
+      className={`${isScrolled?"bg-[#fff] scrollbg border-b border-[#dbd9d2]":""} sticky top-0 w-full z-[102] left-[0px] nav-header before:content-['']] before:absolute before:bg-[#fff] before:left-[0px] before:top-[0px] before:w-full before:h-full before:opacity-0 before:z-[-3] xl:hover:before:opacity-100 header-wrap false xl:pt-[7px] xl:pb-[2px] sm:block hidden`}
     >
       <div className="relative">
         <div className="w-[88%] mx-auto md:max-w-[1300px]">

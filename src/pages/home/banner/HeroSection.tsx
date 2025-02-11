@@ -19,8 +19,8 @@ const HeroSection = () => {
           </div>
           <div className="banner_footer">
             <form className="p-0 m-0">
-              <div className="flex justify-start flex-col items-center sm:flex-row">
-                <div className="w-full mr-[8px]">
+              <div className="flex justify-start flex-col items-center sm:flex-row gap-y-8">
+                <div className="w-full mr-0 sm:mr-[8px]">
                   <PrimaryInput placeholder="Your Work Email" />
                 </div>
                 <div className="w-full md:max-w-[210px]">

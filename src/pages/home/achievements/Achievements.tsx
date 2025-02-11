@@ -33,9 +33,9 @@ const Achievements:React.FunctionComponent = ():JSX.Element => {
                 <a
                   href="http://"
                   target="_blank"
-                  className="group max-w-[340px] md:max-w-[27%] flex-[0_0_100%] md:flex-[0_0_27%] px-[0px] py-[40px] md:py-[0px] md:px-[10px] lg:px-[25px] xl:px-[45px] banner_accolades-wrap__r_Utd"
+                  className="group max-w-[340px] md:max-w-[27%] flex-[0_0_100%] md:flex-[0_0_27%] px-[0px] py-[40px] md:py-[0px] md:px-[10px] lg:px-[25px] xl:px-[45px] "
                 >
-                  <div className="flex flex-col items-center md:items-baseline banner_accolades-content__tfXj3">
+                  <div className="flex flex-col items-center md:items-baseline group hover:-translate-y-1 transition-transform duration-300">
                     <div className="flex mb-[15px]">
                       <div className="flex items-center min-w-[82px] max-w-[156px] max-h-[25px] w-full h-full">
                         <img

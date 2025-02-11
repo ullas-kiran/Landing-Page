@@ -18,7 +18,7 @@ const PlatformList = () => {
           {platforms.map((item,index)=>{
             return (
             <div key={index} className="block shrink-0 basis-1/2 md:basis-1/3 lg:basis-[calc(100%_/_6)] rounded-[10px] mb-[25px] sm:mb-[15px] px-[12px] max-xs:even:pr-0 max-xs:odd:pl-0">
-            <div className="flex items-center justify-center shrink-0 relative mx-auto max-w-[150px] h-[60px] sm:max-w-[190px] sm:h-[72px] rounded-[10px] platformLogoList_translate-transition-kit__A2GmB">
+            <div className="flex items-center justify-center shrink-0 relative mx-auto max-w-[150px] h-[60px] sm:max-w-[190px] sm:h-[72px] rounded-[10px] group hover:-translate-y-1 transition-transform duration-300 cursor-pointer">
                 <img src={item} width={190} height={72} alt="platform" />
             </div>
             </div>
