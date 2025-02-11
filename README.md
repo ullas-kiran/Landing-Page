@@ -1,50 +1,84 @@
-# React + TypeScript + Vite
+# React + Vite Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains a React project built with Vite.
 
-Currently, two official plugins are available:
+## 🚀 Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Follow the instructions below to set up and run the project on your local machine.
 
-## Expanding the ESLint configuration
+### 📌 Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Ensure you have the following installed before proceeding:
 
-- Configure the top-level `parserOptions` property like this:
+- **Node.js** (Latest LTS recommended) - [Download here](https://nodejs.org/)
+- **Git** (Optional, for cloning the repository) - [Download here](https://git-scm.com/)
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### 📥 Installation
+
+1. **Clone the repository:**
+   ```sh
+   git clone <YOUR_REPOSITORY_URL>
+   cd <YOUR_PROJECT_FOLDER>
+   ```
+
+2. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+   or using Yarn:
+   ```sh
+   yarn install
+   ```
+
+### 🚀 Running the Project
+
+To start the development server, run:
+```sh
+npm run dev
+```
+Or using Yarn:
+```sh
+yarn dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+The application will be available at `http://localhost:5173/` (or another port if 5173 is in use).
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### 📦 Building for Production
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+To create a production build, run:
+```sh
+npm run build
 ```
+Or using Yarn:
+```sh
+yarn build
+```
+
+### ✅ Linting and Formatting
+
+To check for linting issues, run:
+```sh
+npm run lint
+```
+Or using Yarn:
+```sh
+yarn lint
+```
+
+To format code using Prettier:
+```sh
+npm run format
+```
+Or using Yarn:
+```sh
+yarn format
+```
+
+### 🛠️ Technologies Used
+- **React** (Latest version)
+- **Vite** (Fast build tool for modern web apps)
+- **Tailwind CSS / SCSS** (If applicable)
+
+
+
+
