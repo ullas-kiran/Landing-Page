@@ -52,4 +52,22 @@ h1, h2, h3, h4, h5, h6 {
       -ms-overflow-style: none;  /* IE and Edge */
       scrollbar-width: none;  /* Firefox */
 }
+
+.header-wrap{
+  background: #090f1d;
+  /* background: linear-gradient(180deg, rgba(9, 15, 29, .898), rgba(9, 15, 29, 0)); */
+}
+.nav-header {
+  transition: background 0s ease-in-out 0s, border-bottom-color .2s ease-in-out .1s, outline-color .2s ease-in-out .1s;
+}
+
+.nav-header:hover .nav-fill-svg {
+  fill: #020a19 !important;
+}
+
+.scrollbg .nav-fill-svg {
+  fill: #020a19 !important;
+}
+
+
 }
